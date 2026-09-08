@@ -32,7 +32,7 @@ const socials = [
   {
     icon: FaGithub,
     label: "GitHub",
-    href: "https://github.com/Shahzaib-27",
+    href: "https://github.com/Shahzaib-Shahid-27",
   },
   {
     icon: FaLinkedin,
@@ -43,11 +43,6 @@ const socials = [
     icon: FaInstagram,
     label: "Instagram",
     href: "https://www.instagram.com/shahzaibs_10/",
-  },
-  {
-    icon: FaMailBulk,
-    label: "Email",
-    href: "https://mail.google.com/mail/?view=cm&fs=1&to=Shahzaibshahidr10@gmail.com",
   },
 ];
 
@@ -398,7 +393,7 @@ export default function Contact() {
               SOCIAL LINKS
           ========================= */}
 
-          <StaggerGroup className="grid grid-cols-2 gap-4 sm:grid-cols-3">
+          <StaggerGroup className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {socials.map(({ icon: Icon, label, href }) => (
               <motion.a
                 key={label}
@@ -418,11 +413,9 @@ export default function Contact() {
                   duration: 0.25,
                   ease: easeSoft,
                 }}
-                className="glass-panel flex flex-col items-center justify-center gap-3 rounded-2xl bg-gradient-accent py-5 text-primary-foreground transition-colors"
-              >
-                <Icon size={30} />
-
-                <span className="text-[11px] uppercase tracking-[0.15em]">
+                className="glass-panel flex flex-col items-center justify-center gap-3 rounded-2xl bg-gradient-accent py-5 text-primary-foreground transition-colors">
+                <Icon size={33} />
+                <span className="text-[12px] uppercase tracking-[0.15em]">
                   {label}
                 </span>
               </motion.a>

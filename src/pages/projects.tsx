@@ -10,7 +10,7 @@ import {
 
 type Project = {
   title: string;
-  category: "Web App" | "E-Commerce" | "UI" | "React App" | "Calculator";
+  category: "Web App" | "E-Commerce"  | "React App" | "Calculator" | "Full Stack Web Application";
   year: string;
   blurb: string;
   detail: string;
@@ -21,6 +21,22 @@ type Project = {
 };
 
 const projects: Project[] = [
+
+    {
+    title: "User Management System",
+    category: "Full Stack Web Application",
+    year: "2026",
+    blurb:
+      "A full-stack user management application for creating, viewing, updating and managing users.",
+    detail:
+      "A user management system built with a modern frontend and backend architecture. The application provides user registration, login, user CRUD operations, authentication and database integration.",
+    stack: ["React", "TypeScript", "Tailwind CSS", "Node.js", "Express", "Prisma", "PostgreSQL"],
+    image: "/projects/user_management.png",
+    gradient:
+      "linear-gradient(135deg, oklch(0.75 0.15 250), oklch(0.45 0.18 280))",
+    href: "https://user-manage-frontend-navy.vercel.app/",
+  },
+
   {
     title: "Dashboard",
     category: "Web App",
@@ -33,7 +49,7 @@ const projects: Project[] = [
     image: "/projects/dashboard.png",
     gradient:
       "linear-gradient(135deg, oklch(0.82 0.15 190), oklch(0.4 0.1 250))",
-    href: "https://dashboard-six-olive-26.vercel.app/",
+    href: "https://dashboard-mu-woad-52.vercel.app/",
   },
 
   {
@@ -48,7 +64,7 @@ const projects: Project[] = [
     image: "/projects/NetflixClone.png",
     gradient:
       "linear-gradient(135deg, oklch(0.62 0.22 25), oklch(0.35 0.08 250))",
-    href: "https://my-project-tawny-rho.vercel.app/",
+    href: "https://my-clone-indol-gamma.vercel.app/",
   },
 
   {
@@ -78,7 +94,7 @@ const projects: Project[] = [
     image: "/projects/games_reviews.png",
     gradient:
       "linear-gradient(135deg, oklch(0.75 0.16 300), oklch(0.82 0.15 190))",
-    href: "https://games-reviews-rose.vercel.app/",
+    href: "https://games-reviews-iota.vercel.app/",
   },
 
   {
@@ -93,7 +109,7 @@ const projects: Project[] = [
     image: "/projects/amazon.png",
     gradient:
       "linear-gradient(135deg, oklch(0.8 0.14 60), oklch(0.86 0.19 118))",
-    href: "https://amazon-clone-three-nu-54.vercel.app/",
+    href: "https://amazon-clone-bice-six.vercel.app/",
   },
 
   {
@@ -108,12 +124,12 @@ const projects: Project[] = [
     image: "/projects/gpa_calculator.png",
     gradient:
       "linear-gradient(135deg, oklch(0.82 0.15 190), oklch(0.45 0.12 250))",
-    href: "https://gpa-calculator-pi-five.vercel.app/",
+    href: "https://gpa-calculator-orcin.vercel.app/",
   },
 
   {
     title: "Login Page",
-    category: "UI",
+    category: "Full Stack Web Application",
     year: "2026",
     blurb:
       "Clean and responsive login interface.",
@@ -123,7 +139,7 @@ const projects: Project[] = [
     image: "/projects/login.png",
     gradient:
       "linear-gradient(135deg, oklch(0.7 0.2 20), oklch(0.75 0.16 300))",
-    href: "https://login-page-seven-plum.vercel.app/",
+    href: "https://login-page-frontend-pi.vercel.app/",
   },
 
   {
@@ -138,7 +154,7 @@ const projects: Project[] = [
     image: "/projects/scientificcalculator.png",
     gradient:
       "linear-gradient(135deg, oklch(0.86 0.19 118), oklch(0.45 0.12 160))",
-    href: "https://react-calculator-six-neon.vercel.app/",
+    href: "https://react-calculator-beta-pearl.vercel.app/",
   },
 ];
 
@@ -146,7 +162,7 @@ const filters = [
   "All",
   "Web App",
   "E-Commerce",
-  "UI",
+  "Full Stack Web Application",
   "Calculator",
 ];
 

@@ -3,6 +3,11 @@ import { motion, useScroll, useTransform } from "motion/react";
 import {ArrowDownRight,ArrowRight,MousePointer2,} from "lucide-react";
 import {easeSoft,Reveal,StaggerGroup,staggerChild,} from "../components/motion-primitives";
 
+
+import Contact from "./contact";
+import About from "./about";
+import Projects from "./projects";
+
 const headline = [
   "Turning "," Code Into","Engaging Experiences.","\n"
 ];
@@ -252,6 +257,17 @@ export default function Home() {
           ))}
         </StaggerGroup>
       </section>
+
+      {/* About Section*/}
+      <About/>
+
+
+      {/* Projects Section*/}
+      <Projects/>
+
+
+      {/* Contact Section*/}
+      <Contact/>
     </>
   );
 }

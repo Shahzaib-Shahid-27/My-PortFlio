@@ -12,7 +12,7 @@ import { Reveal } from "./motion-primitives";
 
 const socials = [
   { icon: SiUpwork, label: "Upwork", href: "https://www.upwork.com/freelancers/~01e277f18df9851dbb" },
-  { icon: FaGithub , label: "GitHub", href: "https://github.com/Shahzaib-27" },
+  { icon: FaGithub , label: "GitHub", href: "https://github.com/Shahzaib-Shahid-27" },
   { icon: FaLinkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/shahzaib-shahid-924172402/" },
   { icon: FaInstagram   , label: "I", href: "https://www.instagram.com/shahzaibs_10/" },
   { icon: FaMailBulk, label: "Email", href: "https://mail.google.com/mail/?view=cm&fs=1&to=Shahzaibshahidr10@gmail.com" },

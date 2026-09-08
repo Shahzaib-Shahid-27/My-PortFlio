@@ -46,7 +46,7 @@ My-PortFlio/
 Clone the repository:
 
 ```bash
-git clone https://github.com/Shahzaib-27/My-PortFlio.git
+git clone https://github.com/Shahzaib-Shahid-27/My-PortFlio.git
 ```
 
 Go to the project directory:
