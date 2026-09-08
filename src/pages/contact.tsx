@@ -7,7 +7,6 @@ import {
   FaGithub,
   FaInstagram,
   FaLinkedin,
-  FaMailBulk,
 } from "react-icons/fa";
 
 import { SiUpwork } from "react-icons/si";
