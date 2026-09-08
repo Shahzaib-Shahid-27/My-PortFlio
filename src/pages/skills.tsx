@@ -1,35 +1,11 @@
-import { AnimatePresence, motion, useInView } from "motion/react";
+import {AnimatePresence,motion,useInView} from "motion/react";
 import { useRef, useState } from "react";
 
-import {
-  Code2,
-  Terminal,
-  Layers,
-  Sparkles,
-  GitBranch,
-  Gauge,
-  Palette,
-  Waves,
-  Server,
-  Network,
-  ShieldCheck,
-  Lock,
-  Database,
-  Upload,
-  Cloud,
-} from "lucide-react";
+import {Code2,Terminal,Layers,Sparkles,GitBranch,Gauge,Palette,Waves,Server,Network,ShieldCheck,Lock,Database,Upload,Cloud,} from "lucide-react";
 
-import {
-  SectionHeading,
-  StaggerGroup,
-  staggerChild,
-  easeSoft,
-} from "../components/motion-primitives";
+import {SectionHeading,easeSoft} from "../components/motion-primitives";
 
-/* =========================================================
-   MARQUEE
-========================================================= */
-
+// MARQUEE
 const marquee = [
   "React",
   "TypeScript",
@@ -46,10 +22,7 @@ const marquee = [
   "GitHub",
 ];
 
-/* =========================================================
-   SKILL CATEGORIES
-========================================================= */
-
+// SKILL CATEGORIES
 const categories = {
   Frontend: [
     { name: "React", level: 90 },
@@ -95,39 +68,89 @@ const categories = {
 
 type Category = keyof typeof categories;
 
-/* =========================================================
-   TOOLS
-========================================================= */
-
+// TOOLS
 const tools = [
-  { icon: Code2, label: "React" },
-  { icon: Terminal, label: "TypeScript" },
-  { icon: Code2, label: "JavaScript" },
-  { icon: Layers, label: "Tailwind CSS" },
-  { icon: Palette, label: "HTML & CSS" },
-
-  { icon: Server, label: "Node.js" },
-  { icon: Server, label: "Express.js" },
-  { icon: Network, label: "REST APIs" },
-  { icon: ShieldCheck, label: "JWT Authentication" },
-  { icon: Lock, label: "bcrypt" },
-
-  { icon: GitBranch, label: "Middleware" },
-  { icon: Database, label: "Prisma ORM" },
-  { icon: Database, label: "PostgreSQL" },
-  { icon: Database, label: "SQL" },
-  { icon: Upload, label: "Multer" },
-
-  { icon: Cloud, label: "Cloudinary" },
-  { icon: Sparkles, label: "Framer Motion" },
-  { icon: Gauge, label: "Vite" },
-  { icon: GitBranch, label: "Git & GitHub" },
-  { icon: Waves, label: "Animation" },
+  {
+    icon: Code2,
+    label: "React",
+  },
+  {
+    icon: Terminal,
+    label: "TypeScript",
+  },
+  {
+    icon: Code2,
+    label: "JavaScript",
+  },
+  {
+    icon: Layers,
+    label: "Tailwind CSS",
+  },
+  {
+    icon: Palette,
+    label: "HTML & CSS",
+  },
+  {
+    icon: Server,
+    label: "Node.js",
+  },
+  {
+    icon: Server,
+    label: "Express.js",
+  },
+  {
+    icon: Network,
+    label: "REST APIs",
+  },
+  {
+    icon: ShieldCheck,
+    label: "JWT Authentication",
+  },
+  {
+    icon: Lock,
+    label: "bcrypt",
+  },
+  {
+    icon: GitBranch,
+    label: "Middleware",
+  },
+  {
+    icon: Database,
+    label: "Prisma ORM",
+  },
+  {
+    icon: Database,
+    label: "PostgreSQL",
+  },
+  {
+    icon: Database,
+    label: "SQL",
+  },
+  {
+    icon: Upload,
+    label: "Multer",
+  },
+  {
+    icon: Cloud,
+    label: "Cloudinary",
+  },
+  {
+    icon: Sparkles,
+    label: "Framer Motion",
+  },
+  {
+    icon: Gauge,
+    label: "Vite",
+  },
+  {
+    icon: GitBranch,
+    label: "Git & GitHub",
+  },
+  {
+    icon: Waves,
+    label: "Animation",
+  },
 ];
-
-/* =========================================================
-   SKILL PROGRESS BAR
-========================================================= */
 
 function Bar({
   name,
@@ -140,13 +163,12 @@ function Bar({
 }) {
   const ref = useRef<HTMLDivElement | null>(null);
 
-  const inView = useInView(ref, {
-    once: true,
-    margin: "-40px",
-  });
+  const inView = useInView(ref, {once: true,margin: "-40px",});
 
   return (
-    <div ref={ref} className="space-y-3">
+    
+    <div ref={ref} className="w-full space-y-3">
+
       {/* Skill Name + Percentage */}
       <div className="flex items-center justify-between">
         <span className="text-sm font-semibold">
@@ -159,15 +181,14 @@ function Bar({
       </div>
 
       {/* Progress Background */}
-      <div className="h-2 overflow-hidden rounded-full bg-muted">
-        {/* Progress */}
+      <div className="h-2 w-full overflow-hidden rounded-full bg-muted">
         <motion.div
-          initial={{ width: 0 }}
-          animate={
-            inView
-              ? { width: `${level}%` }
-              : { width: 0 }
-          }
+          initial={{
+            width: 0,
+          }}
+          animate={{
+            width: inView ? `${level}%` : "0%",
+          }}
           transition={{
             duration: 1.1,
             delay: index * 0.1,
@@ -180,38 +201,89 @@ function Bar({
   );
 }
 
-/* =========================================================
-   SKILLS PAGE
-========================================================= */
+// TOOL CARD
+function ToolCard({
+  icon: Icon,
+  label,
+  index,
+}: {
+  icon: React.ElementType;
+  label: string;
+  index: number;
+}) {
+  return (
+    <motion.div
+      layout
+      initial={{
+        opacity: 0,
+        scale: 0.9,
+        y: 15,
+      }}
+      animate={{
+        opacity: 1,
+        scale: 1,
+        y: 0,
+      }}
+      exit={{
+        opacity: 0,
+        scale: 0.9,
+        y: -10,
+      }}
+      transition={{
+        duration: 0.35,
+        delay: index * 0.03,
+        ease: easeSoft,
+        layout: {
+          duration: 0.4,
+          ease: easeSoft,
+        },
+      }}
+      whileHover={{
+        scale: 1.07,
+        rotate: -3,
+      }}
+      whileTap={{
+        scale: 0.97,
+      }}
+      className="glass-panel flex min-h-32.5 w-full flex-col items-center justify-center gap-3 overflow-visible rounded-2xl px-4 py-7"
+    >
+      <Icon
+        size={22}
+        strokeWidth={1.8}
+        className="text-primary"
+      />
+
+      <span className="text-center text-xs uppercase tracking-[0.15em] text-muted-foreground">
+        {label}
+      </span>
+    </motion.div>
+  );
+}
+
 
 function Skills() {
-  /* Active Skill Category */
-  const [active, setActive] =
-    useState<Category>("Frontend");
+  // ACTIVE CATEGORY
+  const [active, setActive] =useState<Category>("Frontend");
 
-  /* Show More / Show Less Tools */
-  const [showAllTools, setShowAllTools] =
-    useState(false);
+  // SHOW ALL TOOLS
+  const [showAllTools, setShowAllTools] =useState(false);
+
+  // VISIBLE TOOLS
+  const visibleTools = showAllTools ? tools : tools.slice(0, 10);
 
   return (
     <>
-      {/* =====================================================
-          SKILLS SECTION
-      ===================================================== */}
-
+      {/* SKILLS SECTION*/}
       <section className="section-shell">
 
-        {/* Heading */}
+        {/* HEADING*/}
         <SectionHeading
           eyebrow="Skills"
           title="Tools and technologies I use."
           description="A collection of technologies and tools I use to build modern, responsive and interactive web experiences."
         />
 
-        {/* ===================================================
-            CATEGORY BUTTONS
-        =================================================== */}
-
+        {/*  CATEGORY BUTTONS*/}
         <div className="mt-12 flex flex-wrap gap-4">
           {(Object.keys(categories) as Category[]).map(
             (cat) => (
@@ -219,58 +291,34 @@ function Skills() {
                 key={cat}
                 type="button"
                 onClick={() => setActive(cat)}
-                transition={{
-                  duration: 0.2,
-                  ease: "easeInOut",
-                }}
                 whileHover={{
-                  scale: 1.1,
+                  scale: 1.05,
                 }}
                 whileTap={{
                   scale: 0.95,
                 }}
-                className="
-                  relative
-                  cursor-pointer
-                  rounded-xl
-                  bg-gradient-accent
-                  px-5
-                  py-3
-                  text-sm
-                  font-medium
-                  text-primary-foreground
-                "
+                transition={{
+                  duration: 0.2,
+                  ease: "easeInOut",
+                }}
+                className="relative cursor-pointer overflow-hidden rounded-xl bg-gradient-accent px-5 py-3 text-sm font-medium text-primary-foreground"
               >
                 {/* Active Background */}
                 {active === cat && (
                   <motion.span
                     layoutId="skill-tab"
-                    className="
-                      absolute
-                      inset-0
-                      m-1
-                      rounded-full
-                      bg-black
-                      text-white
-                    "
-                    transition={{
-                      duration: 0.6,
-                      ease: easeSoft,
-                    }}
+                    className="absolute inset-0 rounded-xl bg-black m-1"
+                    transition={{duration: 0.3, ease: easeSoft,}}
                   />
                 )}
 
                 {/* Button Text */}
                 <span
-                  className={`
-                    relative
-                    z-10
-                    ${
-                      active === cat
-                        ? "text-white"
-                        : "text-primary-foreground"
-                    }
-                  `}
+                  className={`relative z-10 ${
+                    active === cat
+                      ? "text-white"
+                      : "text-primary-foreground"
+                  }`}
                 >
                   {cat}
                 </span>
@@ -279,11 +327,8 @@ function Skills() {
           )}
         </div>
 
-        {/* ===================================================
-            SKILL PROGRESS SECTION
-        =================================================== */}
-
-        <div className="glass-panel mt-8 rounded-3xl p-8 sm:p-10">
+        {/*  SKILL PROGRESS SECTION */}
+        <div className="glass-panel mt-8 w-full rounded-3xl p-8 sm:p-10">
           <AnimatePresence mode="wait">
             <motion.div
               key={active}
@@ -303,7 +348,7 @@ function Skills() {
                 duration: 0.4,
                 ease: easeSoft,
               }}
-              className="grid gap-8 sm:grid-cols-2"
+              className="grid w-full gap-8 sm:grid-cols-2"
             >
               {categories[active].map(
                 (skill, index) => (
@@ -319,111 +364,64 @@ function Skills() {
           </AnimatePresence>
         </div>
 
-        {/* ===================================================
-            TOOLS
-        =================================================== */}
-
-        <StaggerGroup
-          className="
-            mt-16
-            grid
-            grid-cols-2
-            gap-4
-            sm:grid-cols-3
-            lg:grid-cols-5
-          "
-        >
-          {(showAllTools
-            ? tools
-            : tools.slice(0, 10)
-          ).map(({ icon: Icon, label }) => (
+        {/*  TOOLS*/}
+        <div className="mt-16 w-full">
+          <AnimatePresence
+            initial={false}
+            mode="popLayout"
+          >
             <motion.div
-              key={label}
-              variants={staggerChild}
-              whileHover={{
-                scale: 1.07,
-                rotate: -3,
-              }}
-              transition={{
-                duration: 0.35,
-                ease: easeSoft,
-              }}
-              className="
-                glass-panel
-                flex
-                flex-col
-                items-center
-                gap-3
-                rounded-2xl
-                px-4
-                py-7
-              "
+              layout
+              className="grid w-full grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5"
             >
-              <Icon
-                size={22}
-                className="text-primary"
-              />
-
-              <span
-                className="
-                  text-center
-                  text-xs
-                  uppercase
-                  tracking-[0.15em]
-                  text-muted-foreground
-                "
-              >
-                {label}
-              </span>
+              {visibleTools.map(
+                ({ icon, label }, index) => (
+                  <ToolCard
+                    key={label}
+                    icon={icon}
+                    label={label}
+                    index={index}
+                  />
+                )
+              )}
             </motion.div>
-          ))}
-        </StaggerGroup>
+          </AnimatePresence>
+        </div>
 
-        {/* ===================================================
-            SHOW MORE / SHOW LESS
-        =================================================== */}
-
-        {/* {tools.length > 10 && (
-          <div className="mt-8 flex justify-center">
+        {/*  SHOW MORE / SHOW LESS  */}
+        {tools.length > 10 && (
+          <motion.div
+            layout
+            className="mt-8 flex w-full justify-center"
+          >
             <motion.button
               type="button"
+              onClick={() =>
+                setShowAllTools(
+                  (previous) => !previous
+                )
+              }
               whileHover={{
                 scale: 1.05,
               }}
               whileTap={{
                 scale: 0.95,
               }}
-              onClick={() =>
-                setShowAllTools(
-                  (prev) => !prev
-                )
-              }
-              className="
-                rounded-full
-                border
-                border-border
-                bg-background/50
-                px-6
-                py-3
-                text-sm
-                font-medium
-                transition-colors
-                hover:bg-primary
-                hover:text-primary-foreground
-              "
+              transition={{
+                duration: 0.2,
+                ease: easeSoft,
+              }}
+              className="cursor-pointer rounded-full border border-border bg-gradient-accent px-6 py-3 text-sm font-bold text-black transition-colors"
             >
               {showAllTools
                 ? "Show Less"
-                : "Show More"}
+                : `Show More (${tools.length - 10})`}
             </motion.button>
-          </div>
-        )} */}
+          </motion.div>
+        )}
       </section>
 
-      {/* =====================================================
-          CV BUTTONS
-      ===================================================== */}
-
+      {/*  CV BUTTONS*/}
       <motion.section
         initial={{
           opacity: 0,
@@ -441,87 +439,44 @@ function Skills() {
           delay: 0.2,
           ease: easeSoft,
         }}
-        className="
-          m-2
-          mb-15
-          flex
-          items-center
-          justify-center
-          gap-4
-          flex-wrap
-        "
+        className="m-2 mb-15 flex flex-wrap items-center justify-center gap-4"
       >
+
         {/* View CV */}
         <motion.a
           href="/ShahzaibShahid.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          transition={{
-            duration: 0.2,
-            ease: easeSoft,
-          }}
           whileHover={{
-            scale: 1.1,
+            scale: 1.05,
           }}
           whileTap={{
             scale: 0.95,
           }}
-          className="
-            glass-panel
-            flex
-            items-center
-            justify-center
-            rounded-2xl
-            bg-gradient-accent
-            px-6
-            py-4
-            text-sm
-            font-bold
-            tracking-[1px]
-            text-primary-foreground
-          "
+          className="glass-panel flex items-center justify-center rounded-2xl bg-gradient-accent px-6 py-4 text-sm font-bold tracking-[1px] text-primary-foreground"
         >
-          <h1>View CV</h1>
+          View CV
         </motion.a>
+
 
         {/* Download CV */}
         <motion.a
           href="/ShahzaibShahid.pdf"
           download
-          transition={{
-            duration: 0.2,
-            ease: easeSoft,
-          }}
           whileHover={{
-            scale: 1.1,
+            scale: 1.05,
           }}
           whileTap={{
             scale: 0.95,
           }}
-          className="
-            glass-panel
-            flex
-            items-center
-            justify-center
-            rounded-2xl
-            bg-gradient-accent
-            px-6
-            py-4
-            text-sm
-            font-bold
-            tracking-[1px]
-            text-primary-foreground
-          "
+          className="glass-panel flex items-center justify-center rounded-2xl bg-gradient-accent px-6 py-4 text-sm font-bold tracking-[1px] text-primary-foreground"
         >
-          <h1>Download CV</h1>
+          Download CV
         </motion.a>
       </motion.section>
 
-      {/* =====================================================
-          TECHNOLOGY MARQUEE
-      ===================================================== */}
-
-      <section className="overflow-hidden border-y border-border py-6">
+      {/*  TECHNOLOGY MARQUEE*/}
+      <section className="w-full overflow-hidden border-y border-border py-6">
         <motion.div
           animate={{
             x: ["0%", "-42%"],
@@ -534,18 +489,14 @@ function Skills() {
           className="flex w-max gap-12 pr-14"
         >
           {[...marquee, ...marquee].map(
-            (m, i) => (
+            (item, index) => (
               <span
-                key={`${m}-${i}`}
-                className="
-                  font-display
-                  text-2xl
-                  font-semibold
-                  text-muted-foreground/50
-                "
+                key={`${item}-${index}`}
+                className="font-display text-2xl font-semibold text-muted-foreground/50"
               >
-                {m}{" "}
-                <span className="text-accent">
+                {item}
+
+                <span className="ml-3 text-accent">
                   ◆
                 </span>
               </span>
