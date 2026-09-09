@@ -421,60 +421,6 @@ function Skills() {
         )}
       </section>
 
-      {/*  CV BUTTONS*/}
-      <motion.section
-        initial={{
-          opacity: 0,
-          y: 20,
-        }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-        }}
-        viewport={{
-          once: true,
-        }}
-        transition={{
-          duration: 0.7,
-          delay: 0.2,
-          ease: easeSoft,
-        }}
-        className="m-2 mb-15 flex flex-wrap items-center justify-center gap-4"
-      >
-
-        {/* View CV */}
-        <motion.a
-          href="/ShahzaibShahid.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          whileHover={{
-            scale: 1.05,
-          }}
-          whileTap={{
-            scale: 0.95,
-          }}
-          className="glass-panel flex items-center justify-center rounded-2xl bg-gradient-accent px-6 py-4 text-sm font-bold tracking-[1px] text-primary-foreground"
-        >
-          View CV
-        </motion.a>
-
-
-        {/* Download CV */}
-        <motion.a
-          href="/ShahzaibShahid.pdf"
-          download
-          whileHover={{
-            scale: 1.05,
-          }}
-          whileTap={{
-            scale: 0.95,
-          }}
-          className="glass-panel flex items-center justify-center rounded-2xl bg-gradient-accent px-6 py-4 text-sm font-bold tracking-[1px] text-primary-foreground"
-        >
-          Download CV
-        </motion.a>
-      </motion.section>
-
       {/*  TECHNOLOGY MARQUEE*/}
       <section className="w-full overflow-hidden border-y border-border py-6">
         <motion.div

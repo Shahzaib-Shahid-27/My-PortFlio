@@ -12,45 +12,44 @@ import {
 function About() {
   const ref = useRef<HTMLDivElement | null>(null);
 
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
+  const { scrollYProgress } = useScroll({target: ref,offset: ["start end", "end start"],});
 
-  const y = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [40, -40]
-  );
+  const y = useTransform(scrollYProgress,[0, 1],[40, -40]);
 
   const aboutContent = [
-    "I am a Front-End Web Developer who builds modern, responsive, and user-friendly websites. I specialize in creating clean and visually appealing user interfaces using HTML, CSS, JavaScript, React, and Tailwind CSS.",
+    "I am a Full Stack Web Developer who builds modern, responsive, and user-friendly web applications. I specialize in creating clean frontend interfaces and reliable backend systems using React, TypeScript, JavaScript, Node.js, Express.js, PostgreSQL, and Tailwind CSS.",
 
     "My core skills include:",
 
-    "• Responsive Web Design",
+    "• Frontend Development with React & TypeScript",
 
-    "• Front-End Development with React",
+    "• Backend Development with Node.js & Express.js",
 
-    "• JavaScript and React Applications",
+    "• REST API Development",
 
-    "• UI Development with Tailwind CSS",
+    "• PostgreSQL & Database Management",
+
+    "• Authentication & Authorization",
+
+    "• UI Development with Tailwind CSS Responsive Web Design",
+
+    "• Git & GitHub",
 
     "• Clean, Organized, and Maintainable Code",
 
-    "I am constantly learning new technologies and improving my development skills to deliver high-quality work. I value clear communication, meeting deadlines, and creating solutions that align with project requirements.",
+    "I focus on building complete web applications by connecting modern frontend interfaces with secure backend services and well-structured databases. I am constantly learning new technologies and improving my development skills to create efficient and scalable solutions.",
 
-    "I am ready to help improve an existing web UI. I am ready to turn your ideas into a polished web experience.",
+    "I value clear communication, attention to detail, meeting deadlines, and building solutions that match project requirements. My goal is to turn ideas into fast, functional, and polished full-stack web experiences.",
   ];
 
   const profileInfo = [
     ["From", "Pakistan, available remotely"],
-    ["Focus", "Frontend development, UI & interaction"],
+    ["Focus", "Full Stack Development, UI & Web Applications"],
     [
       "Currently",
-      "Building projects & improving my skills, also learning backend concepts",
+      "Building full-stack projects with React, Node.js, Express.js & PostgreSQL",
     ],
-    ["Future", "Full Stack Developer"],
+    ["Goal", "Building scalable and production-ready web applications"],
   ];
 
   const stats = [
@@ -60,19 +59,19 @@ function About() {
       label: "Web Projects",
     },
     {
-      to: 4,
+      to: 8,
       suffix: "+",
-      label: "Frontend Technologies",
+      label: "Technologies",
     },
     {
-      to: 10,
+      to: 3,
       suffix: "+",
-      label: "React Projects",
+      label: "Full-Stack Projects",
     },
     {
       to: 100,
       suffix: "%",
-      label: "Passion for Web",
+      label: "Passion for Development",
     },
   ];
 
@@ -87,7 +86,7 @@ function About() {
         />
 
         {/* About Content */}
-        <div className="mt-5 grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+        <div className="mt-2 grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           {/* Image */}
           <div
             ref={ref}
@@ -106,7 +105,7 @@ function About() {
                   duration: 0.6,
                   ease: easeSoft,
                 }}
-                className="glass-panel overflow-hidden rounded-4xl p-2 mt-5">
+                className="glass-panel overflow-hidden rounded-4xl p-2 mt-2">
                 <img
                   src="/portrait.jpg"
                   alt="Portrait of Shahzaib Shahid"
@@ -123,7 +122,7 @@ function About() {
           </div>
 
           {/* About Text */}
-          <div className="space-y-6 pt-25">
+          <div className="space-y-6 pt-15">
             {aboutContent.map((p, i) => (
               <Reveal
                 key={`${p}-${i}`}
@@ -135,32 +134,90 @@ function About() {
               </Reveal>
             ))}
 
+
+          </div>
+        </div>
+
+
+
+            {/*  CV BUTTONS*/}
+            <motion.section
+              initial={{
+                opacity: 0,
+                y: -20,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 20,
+              }}
+              viewport={{
+                once: true,
+              }}
+              transition={{
+                duration: 0.7,
+                delay: 0.2,
+                ease: easeSoft,
+              }}
+              className="m-2 mt-20 mb-25 flex flex-wrap items-center justify-center gap-4"
+            >
+      
+              {/* View CV */}
+              <motion.a
+                href="/ShahzaibShahid.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{
+                  scale: 1.05,
+                }}
+                whileTap={{
+                  scale: 0.95,
+                }}
+                className="glass-panel flex items-center justify-center rounded-2xl bg-gradient-accent px-6 py-4 text-sm font-bold tracking-[1px] text-primary-foreground"
+              >
+                View CV
+              </motion.a>
+      
+      
+              {/* Download CV */}
+              <motion.a
+                href="/ShahzaibShahid.pdf"
+                download
+                whileHover={{
+                  scale: 1.05,
+                }}
+                whileTap={{
+                  scale: 0.95,
+                }}
+                className="glass-panel flex items-center justify-center rounded-2xl bg-gradient-accent px-6 py-4 text-sm font-bold tracking-[1px] text-primary-foreground"
+              >
+                Download CV
+              </motion.a>
+            </motion.section>
+
             {/* Profile Information */}
             <Reveal delay={0.3}>
-              <dl className="mt-6 grid grid-cols-2 gap-6 border-t border-border glass-panel p-6
-              rounded-4xl
+              <dl className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-6 p-6
+              rounded-4xl justify-center items-center
               ">
                 {profileInfo.map(([key, value]) => (
-                  <div key={key}>
-                    <dt className="font-mono text-[15px] tracking-[0.2em] uppercase text-primary ">
+                  <div key={key} 
+                  className="border-t border-border backdrop-blur-xl p-5 glass-panel rounded-2xl hover:scale-105 transition-all duration-300 ease-in-out justify-center items-center ">
+                    <dt className="font-medium text-[15px] tracking-[0.2em] uppercase text-gradient">
                       {key}
                     </dt>
-
-                    <dd className="mt-2 text-sm text-muted-foreground ">
+                    <dd className="mt-2 text-sm text-muted-foreground">
                       {value}
                     </dd>
                   </div>
                 ))}
               </dl>
             </Reveal>
-          </div>
-        </div>
       </section>
 
       {/* Statistics */}
       <section className="section-shell pt-10 sm:pt-14 lg:pt-16">
         <StaggerGroup
-          className=" mx-auto grid w-full max-w-5xl grid-cols-2 justify-items-center gap-4 sm:gap-6 lg:grid-cols-4
+          className=" mx-auto grid w-full max-w-5xl grid-cols-1 justify-items-center gap-4 sm:gap-6 md:grid-cols-3 lg:grid-cols-4
           ">
           {stats.map((stat, index) => (
             <motion.div

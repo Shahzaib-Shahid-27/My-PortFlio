@@ -9,63 +9,66 @@ import About from "./about";
 import Projects from "./projects";
 
 const headline = [
-  "Turning "," Code Into","Engaging Experiences.","\n"
+  "Turning ",
+  "Ideas Into",
+  "Full-Stack Experiences.",
+  "\n",
 ];
 
 const marquee = [
-  "React", "TypeScript","JavaScript","Tailwind","HTML","GitHub","CSS",
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "Tailwind",
+  "Express",
+  "Prisma",
+  "SQL",
+  "PostgreSQL",
+  "APIs",
+  "JWT",
+  "GitHub",
 ];
 
 const features = [
   {
     title: "Frontend Development",
-    body:
-      "Building modern, responsive interfaces with React, TypeScript and reusable components.",
+    body:"Building modern, responsive interfaces with React, TypeScript, Tailwind CSS and reusable components.",
   },
   {
-    title: "UI & Interaction",
-    body:
-      "Creating smooth animations, intuitive interactions and polished experiences with Framer Motion and CSS.",
+    title: "Backend Development",
+    body:"Developing reliable server-side applications and REST APIs using Node.js, Express.js and TypeScript.",
   },
   {
-    title: "Responsive Design",
-    body:
-      "Designing websites that work smoothly across desktops, tablets and mobile devices.",
+    title: "Database Development",
+    body:"Designing and managing structured databases with PostgreSQL, Prisma and efficient data relationships.",
   },
   {
-    title: "React Applications",
-    body:
-      "Developing component-based React applications with clean structure, reusable logic and modern development practices.",
+    title: "API Development",
+    body:"Creating secure and scalable REST APIs for communication between frontend applications, servers and databases.",
   },
   {
-    title: "JavaScript Development",
-    body:
-      "Building interactive web experiences using JavaScript, DOM manipulation, events and modern ES6+ features.",
+    title: "Authentication & Security",
+    body:"Implementing user authentication, authorization, JWT-based access control and secure password handling.",
   },
   {
-    title: "Modern Web Interfaces",
-    body:
-      "Turning ideas into visually polished websites with modern layouts, animations, gradients and interactive elements.",
+    title: "Full-Stack Applications",
+    body:"Connecting modern frontends with powerful backends and databases to build complete, production-ready web applications.",
   },
+
 ];
 
 export default function Home() {
   const { scrollY } = useScroll();
 
-  const parallax = useTransform(
-    scrollY,
-    [0, 600],
-    [0, 120]
-  );
-
+  const parallax = useTransform( scrollY , [ 0,600] , [ 0, 120 ]);
   const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate("/projects");
-  };
+  const handleClick = () => { navigate("/projects") };
 
   return (
     <>
+
       {/*  HERO  */}
       <section className="section-shell pt-28 ">
 
@@ -183,6 +186,7 @@ export default function Home() {
         </motion.div>
 
       </section>
+
 
 
       {/*  MARQUEE  */}

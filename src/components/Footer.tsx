@@ -15,7 +15,6 @@ const socials = [
   { icon: FaGithub , label: "GitHub", href: "https://github.com/Shahzaib-Shahid-27" },
   { icon: FaLinkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/shahzaib-shahid-924172402/" },
   { icon: FaInstagram   , label: "I", href: "https://www.instagram.com/shahzaibs_10/" },
-  { icon: FaMailBulk, label: "Email", href: "https://mail.google.com/mail/?view=cm&fs=1&to=Shahzaibshahidr10@gmail.com" },
 ];
 
 export function Footer() {
@@ -32,12 +31,18 @@ export function Footer() {
               <h3 className="mt-4 max-w-md text-3xl font-semibold sm:text-4xl">
                 Let's build something worth <span className="text-gradient">remembering</span>.
               </h3>
-              <Link
-                to="/contact"
+                <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=Shahzaibshahidr10@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="link-underline mt-6 inline-block text-sm text-muted-foreground hover:text-foreground "
-              >
-                Shahzaibshahidr10@gamil.com
-              </Link>
+                >
+                Shahzaibshahidr10@gmail.com
+              </a>
+                <br />
+              <span className="link-underline inline-block text-sm text-muted-foreground hover:text-foreground ">
+                Lahore, Pakistan 
+              </span>
             </div>
 
             <div className="flex items-center gap-3">

@@ -67,9 +67,8 @@ const WelcomePage = () => {
             ease:easeOut
         }}
         className="mt-7 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-          Frontend developer portfolio showcasing React, JavaScript,
+           Full Stack Web Developer featuring modern, responsive web applications builts. 
           <br className="hidden sm:block" />
-          TypeScript, Tailwind CSS and modern web projects.
         </motion.p>
 
         {/* Enter Button */}
