@@ -1,11 +1,11 @@
-import {Link,} from "react-router-dom";
+// import {Link,} from "react-router-dom";
 import {  motion } from "motion/react";
 import { ArrowUp, 
   // Github, Linkedin, 
   // Instagram,
     } from "lucide-react";
 
-import { FaGithub,FaLinkedin,FaInstagram ,FaMailBulk  } from "react-icons/fa";
+import { FaGithub,FaLinkedin,FaInstagram   } from "react-icons/fa";
 import { SiUpwork   } from "react-icons/si";
 
 import { Reveal } from "./motion-primitives";

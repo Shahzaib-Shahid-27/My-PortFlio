@@ -281,7 +281,7 @@ function Projects() {
 
             <ArrowUpRight
               size={16}
-              className={`transition-transform duration-200 ${showAllProjects ? "rotate-[-90deg]" : ""}`}
+              className={`transition-transform duration-200 ${showAllProjects ? "-rotate-90" : ""}`}
             />
           </motion.button>
         </div>
