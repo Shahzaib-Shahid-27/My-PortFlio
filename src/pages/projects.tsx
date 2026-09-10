@@ -110,7 +110,7 @@ const projects: Project[] = [
     image: "/projects/amazon.png",
     gradient:
       "linear-gradient(135deg, oklch(0.8 0.14 60), oklch(0.86 0.19 118))",
-    href: "https://amazon-clone-bice-six.vercel.app/",
+    href: "https://project-clone-ruddy-eta-20.vercel.app/",
   },
   {
     title: "GPA Calculator",
