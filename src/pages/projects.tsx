@@ -71,7 +71,7 @@ const projects: Project[] = [
     image: "/projects/NetflixClone.png",
     gradient:
       "linear-gradient(135deg, oklch(0.62 0.22 25), oklch(0.35 0.08 250))",
-    href: "https://my-clone-indol-gamma.vercel.app/",
+    href: "https://my-project-tawny-rho.vercel.app/",
   },
   {
     title: "Careem App Clone",
